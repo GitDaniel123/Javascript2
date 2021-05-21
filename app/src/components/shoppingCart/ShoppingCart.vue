@@ -18,7 +18,7 @@
               </div>
               <small class="text-muted"> Inkl. moms</small>
           </div>
-          <router-link to="/order" data-abc="true">  <button class="btn btn-danger">GO TO CART</button> </router-link>
+          <router-link to="/order" data-abc="true">  <button class="btn btn-dark">GO TO CART</button> </router-link>
       </div>
   </div>
 </template>

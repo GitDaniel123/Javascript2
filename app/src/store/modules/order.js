@@ -1,4 +1,5 @@
 import axios from 'axios'
+import router from '../../router'
 
 
 export default {
@@ -24,6 +25,7 @@ export default {
             axios.post('http://localhost:9999/api/orders/', orders).then((res) => {
                 if(res.status === 201) {
                     commit('GET_ORDERS', res.data)
+                    router.push('/orderconfirmed')
                 }
             })
             console.log(orders)

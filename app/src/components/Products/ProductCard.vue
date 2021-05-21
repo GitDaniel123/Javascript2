@@ -1,6 +1,6 @@
 <template>
   <div class="col mt-4">
-      <div class="card p-4 mb-4">
+      <div class="card p-4 mb-4 img-point">
           <img :src="product.image" alt="..." class="card-img-top ">
           <div class="card-body">
               <h4 class="card-title">{{ product.name }}</h4>
@@ -8,7 +8,7 @@
               
 
 
-              <router-link :to="{ name:'ProductDetails', params: { id: product._id }}" type="button" class="btn btn-danger">Visa produkt</router-link>
+              <router-link :to="{ name:'ProductDetails', params: { id: product._id }}" type="button" class="btn btn-dark">Visa produkt</router-link>
           </div>
       </div>
   </div>
@@ -21,6 +21,6 @@ export default {
 }
 </script>
 
-<style>
+<style >
 
 </style>

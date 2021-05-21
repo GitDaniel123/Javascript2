@@ -17,7 +17,7 @@
                     <h2> {{ product.desc }}</h2>
                 <div class="d-flex justify-content-between align-items-center">
                      <h2 class="text-danger pt-4">{{ product.price }} <span class="text-dark">SEK</span></h2>
-                     <button class="btn btn-danger" @click="addProductToCart({ product, quantity })"> Add to cart</button>    
+                     <button class="btn btn-dark" @click="addProductToCart({ product, quantity })"> Add to cart</button>    
                 </div>
                     
                 </div>

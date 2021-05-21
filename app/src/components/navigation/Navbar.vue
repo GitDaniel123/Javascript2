@@ -57,11 +57,12 @@
               data-mdb-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fas fa-user"></i>
+              <i class="fas fa-user"></i> 
             </a>
             <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdownMenuLink">
-              <li v-if="!loggedIn" class="dropdown-item "><router-link to="/login">Tryck här för att logga in</router-link></li>
-              <li v-if="loggedIn" class="dropdown-item "><router-link to="/orderHistory">Aktuella ordrar</router-link></li>
+              <li v-if="!loggedIn" class="dropdown-item  pt-3 "><router-link to="/login"><button class="btn btn-dark px-5 ">Logga in</button></router-link></li>
+              <li v-if="loggedIn" class="dropdown-item "><router-link to="/orderHistory"><button class="btn btn-dark px-3">Aktuella ordrar</button></router-link></li>
+              <li class="d-flex justify-content-center mb-2"><button @click="handleLogout()" v-if="loggedIn" class="btn btn-dark px-5 ">Logout</button></li>
             </ul>
           </li>
 
@@ -73,8 +74,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
- import ShoppingCart from '../shoppingCart/ShoppingCart'
+import { mapActions, mapGetters } from 'vuex'
+import ShoppingCart from '../shoppingCart/ShoppingCart'
+ 
  
 export default {
   name: 'Navbar',
@@ -83,6 +85,12 @@ export default {
   },
   computed: {
     ...mapGetters(['loggedIn', 'cartItemCount'])
+  },
+  methods: {
+    ...mapActions(['logout']),
+    handleLogout(){
+      this.logout()
+    }
   }
 }
 </script>

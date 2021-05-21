@@ -42,7 +42,7 @@
                 </div>
                 <div>
                     <button v-if="shoppingCart.length < 1" class="btn btn-danger" disabled >Order is empty</button>
-                    <router-link to="/orderconfirmed" v-else class="btn btn-danger" v-on:click.native="orders">Confirm order</router-link>
+                    <button  v-else class="btn btn-danger" v-on:click="orders">Confirm order</button>
                     
                     
 

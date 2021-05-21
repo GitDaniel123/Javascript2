@@ -11,6 +11,7 @@
           <label for="password" class="form-label d-flex justify-content-start">Password</label>
           <input type="password" id="password" class="form-control" v-model="password">
       </div>
+      <h6 class="text-danger text-center" > {{error}}</h6>
       <button class="btn btn-danger btn-block">Sign in</button>
 
       <div class="text-center">
@@ -21,13 +22,16 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
     data() {
         return {
             email: '',
             password: ''
         }
+    },
+    computed: {
+        ...mapGetters(['error'])
     },
     methods: {
         ...mapActions(['login']),
